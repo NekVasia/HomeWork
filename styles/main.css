@@ -1,36 +1,85 @@
-* {
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-    overflow-y: hidden;
+/*!** {*!*/
+/*!*    top: 0;*!*/
+/*!*    left: 0;*!*/
+/*!*    right: 0;*!*/
+/*!*    bottom: 0;*!*/
+/*!*    margin: 0;*!*/
+/*!*    padding: 0;*!*/
+/*!*    overflow-x: hidden;*!*/
+/*!*    overflow-y: hidden;*!*/
+/*!*}*!*/
+
+/*.header {*/
+/*    top: 0;*/
+/*    min-height: 50px;*/
+/*    background: linear-gradient(90deg, #545454, #bdbdbd, #545454);*/
+/*}*/
+
+/*.content {*/
+
+/*}*/
+
+/*.content-block {*/
+
+/*}*/
+
+/*.calculator {*/
+
+/*}*/
+
+/*.history {*/
+
+/*}*/
+
+/*.footer {*/
+
+/*}*/
+
+
+/*временное*/
+
+.section {
+    height: 480px;
+    width: 570px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    /*border: 2px solid;*/
 }
 
-.header {
-    top: 0;
-    min-height: 50px;
-    background: linear-gradient(90deg, #545454, #bdbdbd, #545454);
+.section__block {
+    display: block;
+    margin: 5px;
+    padding: 0 10px;
+    height: 250px;
+    width: 250px;
+    border: 2px solid;
+    text-align: center;
 }
 
-.content {
-
+.select {
+    margin: 5px;
+    height: 30px;
+    width: 200px;
 }
 
-.content-block {
-
+.input {
+    margin: 5px;
+    height: 23px;
+    width: 192px;
 }
 
-.calculator {
-
+.button {
+    margin: 5px;
+    height: 30px;
+    width: 200px;
 }
 
-.history {
-
+.result-field {
+    height: 200px;
 }
 
-.footer {
-
+.history-field {
+    height: 464px;
 }
+

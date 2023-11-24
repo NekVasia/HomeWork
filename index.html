@@ -3,57 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <title>HomeWork</title>
+    <script src="scripts/script.js"></script>
     <link rel="stylesheet" href="styles/main.css">
     <link rel="shortcut icon" href="images/hat.png">
 </head>
-<body>
+<body class="body">
 
-<header class="header">
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-</header>
 
-<section class="content">
-    <div class="content-block">
-        <div class="calculator">
-            <div class="calculator__field"></div>
-            <div class="calculator__button">
-                <button>AC</button>
-                <button>+/-</button>
-                <button>%</button>
-                <button>/</button>
-                <button>7</button>
-                <button>8</button>
-                <button>9</button>
-                <button>*</button>
-                <button>4</button>
-                <button>5</button>
-                <button>6</button>
-                <button>-</button>
-                <button>1</button>
-                <button>2</button>
-                <button>3</button>
-                <button>+</button>
-                <button>0</button>
-                <button>,</button>
-                <button>=</button>
-            </div>
+
+<section class="section">
+    <div class="section__block calculate">
+        <h2>Калькулятор</h2>
+        <label>
+            <input class="input" type="number" id="number1">
+        </label>
+        <label for="operation"></label><select class="select" id="operation" name="operation">
+            <option value="+">Плюс (+)</option>
+            <option value="-">Минус (-)</option>
+            <option value="×">Умножение (×)</option>
+            <option value="÷">Деление (÷)</option>
+            </select>
+        <label>
+            <input class="input" type="number" id="number2">
+        </label>
+        <div>
+            <button onclick="calculate()" class="button">Вычислить</button>
         </div>
     </div>
-    <div class="content-block">
+
+    <div class="section__block result-field">
+        <h2>Результат</h2>
+        <div class="result" id="result">
+        </div>
+    </div>
+
+    <div class="section__block history-field">
+        <h2>История</h2>
         <div class="history">
-            <div class="history__field"></div>
-            <div class="history__button"></div>
         </div>
     </div>
 </section>
 
-<footer class="footer">
-    <div></div>
-    <div></div>
-</footer>
+
+<!--<header class="header">-->
+<!--    <div></div>-->
+<!--    <div></div>-->
+<!--    <div></div>-->
+<!--    <div></div>-->
+<!--</header>-->
+
+<!--<section class="content">-->
+<!--    <div class="content-block">-->
+<!--        <div class="calculator">-->
+<!--            <div class="calculator__field"></div>-->
+<!--            <div class="calculator__button">-->
+<!--                <button>AC</button>-->
+<!--                <button>+/-</button>-->
+<!--                <button>%</button>-->
+<!--                <button>/</button>-->
+<!--                <button>7</button>-->
+<!--                <button>8</button>-->
+<!--                <button>9</button>-->
+<!--                <button>*</button>-->
+<!--                <button>4</button>-->
+<!--                <button>5</button>-->
+<!--                <button>6</button>-->
+<!--                <button>-</button>-->
+<!--                <button>1</button>-->
+<!--                <button>2</button>-->
+<!--                <button>3</button>-->
+<!--                <button>+</button>-->
+<!--                <button>0</button>-->
+<!--                <button>,</button>-->
+<!--                <button>=</button>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <div class="content-block">-->
+<!--        <div class="history">-->
+<!--            <div class="history__field"></div>-->
+<!--            <div class="history__button"></div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</section>-->
+
+<!--<footer class="footer">-->
+<!--    <div></div>-->
+<!--    <div></div>-->
+<!--</footer>-->
 
 </body>
 </html>
