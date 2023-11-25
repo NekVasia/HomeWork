@@ -1,7 +1,3 @@
-function init() {
-    //запрос с базы данных
-}
-
 const showResult = (data) => {
     document.getElementById("result").innerText = data.result;
 }
@@ -34,6 +30,25 @@ const getData = () => {
     }
 }
 
+const init = () => {
+    //запрос с базы данных c fetch
+    fetch("server/calculator.php", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(getData()),
+    })
+
+        .then(response => response.json())
+        .then(data => {
+            showHistory(data);
+        })
+        .catch(error => {
+            showError(error);
+        });
+}
+
 const calculate = () => {
     fetch("server/calculator.php", {
         method: "POST",
@@ -45,6 +60,7 @@ const calculate = () => {
 
         .then(response => response.json())
         .then(data => {
+            console.log(data);
             showResult(data);
             clearHistory();
             showHistory(data);
@@ -53,3 +69,7 @@ const calculate = () => {
             showError(error);
         });
 }
+
+window.addEventListener('load', () => {
+    init();
+});
