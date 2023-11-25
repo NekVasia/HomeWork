@@ -1,37 +1,36 @@
-const showResult = (data) => {
+const showResult = (data) => { //Функция для вывода результата
     document.getElementById("result").innerText = data.result;
 }
 
-const clearHistory = () => {
+const clearHistory = () => { //Функция для отчистки истории
     document.getElementById("history").innerHTML = "";
 }
 
-const showHistory = (data) => {
+const showHistory = (data) => { //Функция для отображения истории
     data.history.forEach((item) => appendHistoryItem(item));
 }
 
-const appendHistoryItem = (data) => {
+const appendHistoryItem = (data) => { //Функция для конструирования отображаемой истории
     const historyElement = document.getElementById("history");
     const historyItemElement = document.createElement("div");
     historyItemElement.innerText = data.number1 + data.operation + data.number2 + "=" + data.result;
     historyElement.append(historyItemElement); // append втыкает в него
 }
 
-const showError = (error) => {
+const showError = (error) => { //Функция вывода ошибки
     console.log(error);
     document.getElementById("result").innerText = "Ошибка";
 }
 
-const getData = () => {
-    return {
+const getData = () => { //Создаем массив с данными калькулятора
+    return { //"Возвращаем" данные с HTML
         "number1": document.getElementById("number1").value,
         "number2": document.getElementById("number2").value,
         "operation": document.getElementById("operation").value
     }
 }
 
-const init = () => {
-    //запрос с базы данных c fetch
+const init = () => { //Функция для отображения истории при загрузке страницы
     fetch("server/calculator.php", {
         method: "POST",
         headers: {
@@ -49,7 +48,7 @@ const init = () => {
         });
 }
 
-const calculate = () => {
+const calculate = () => { //Функция для передачи данных в php
     fetch("server/calculator.php", {
         method: "POST",
         headers: {
@@ -70,6 +69,6 @@ const calculate = () => {
         });
 }
 
-window.addEventListener('load', () => {
+window.addEventListener('load', () => { //Функция для вывода данных "История" при загрузке страницы
     init();
 });
