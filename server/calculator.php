@@ -2,6 +2,8 @@
 require_once ("Data.php");
 require_once ("Doorman.php");
 
+session_start();
+
 $jsonData = file_get_contents('php://input');
 
 $data = json_decode($jsonData, true); //Преобразуем данные JSON в массив

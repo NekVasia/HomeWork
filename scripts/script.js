@@ -14,7 +14,7 @@ const appendHistoryItem = (data) => { //Функция для конструир
     const historyElement = document.getElementById("history");
     const historyItemElement = document.createElement("div");
     historyItemElement.innerText = data.number1 + data.operation + data.number2 + "=" + data.result;
-    historyElement.append(historyItemElement); // append втыкает в него
+    historyElement.append(historyItemElement); //append вставляет "historyElement" в "historyItemElement"
 }
 
 const showError = (error) => { //Функция вывода ошибки
@@ -48,6 +48,10 @@ const init = () => { //Функция для отображения истори
         });
 }
 
+window.addEventListener('load', () => { //Функция для вывода данных "История" при загрузке страницы
+    init();
+});
+
 const calculate = () => { //Функция для передачи данных в php
     fetch("server/calculator.php", {
         method: "POST",
@@ -68,7 +72,3 @@ const calculate = () => { //Функция для передачи данных 
             showError(error);
         });
 }
-
-window.addEventListener('load', () => { //Функция для вывода данных "История" при загрузке страницы
-    init();
-});
