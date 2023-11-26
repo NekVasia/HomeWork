@@ -1,6 +1,7 @@
 <?php
 require_once ("Data.php");
 require_once ("Doorman.php");
+require_once ("Calculate.php");
 
 session_start();
 
@@ -15,13 +16,8 @@ if (($data["number1"] === "") || ($data["number2"] === "") || ($data["operation"
     $number2 = $data["number2"];
     $operation = $data["operation"];
 
-    $result = match ($operation) {
-        "+" => $number1 + $number2,
-        "-" => $number1 - $number2,
-        "×" => $number1 * $number2,
-        "÷" => $number2 != 0 ? $number1 / $number2 : "Ошибка: Деление на 0",
-        default => "Ошибка в расчетах",
-    };
+    $Calculate = new Calculate(); //Функция калькулятора
+    $result = $Calculate -> calculator($number1, $operation, $number2);
 
     if (is_numeric($result)) { //Если "результат" численный, то записывается в SQL
         $data = new Data(); //Запись данных в SQL
