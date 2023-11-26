@@ -22,7 +22,7 @@ const showError = (error) => { //Функция вывода ошибки
     document.getElementById("result").innerText = "Ошибка";
 }
 
-const getData = () => { //Создаем массив с данными калькулятора
+const getData = () => { //Создаем массив с переменными
     return { //"Возвращаем" данные с HTML
         "number1": document.getElementById("number1").value,
         "number2": document.getElementById("number2").value,
@@ -31,16 +31,10 @@ const getData = () => { //Создаем массив с данными каль
 }
 
 const init = () => { //Функция для отображения истории при загрузке страницы
-    fetch("server/calculator.php", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify(getData()),
-    })
-
+    fetch("server/history.php",)
         .then(response => response.json())
         .then(data => {
+            console.log(data);
             showHistory(data);
         })
         .catch(error => {
@@ -65,8 +59,8 @@ const calculate = () => { //Функция для передачи данных 
         .then(data => {
             console.log(data);
             showResult(data);
-            clearHistory();
-            showHistory(data);
+            // clearHistory();
+            // showHistory(data);
         })
         .catch(error => {
             showError(error);

@@ -3,7 +3,7 @@ require_once ("Data.php");
 require_once ("Doorman.php");
 require_once ("Calculate.php");
 
-session_start();
+session_start(); //Запуск сессии
 
 $jsonData = file_get_contents('php://input');
 
