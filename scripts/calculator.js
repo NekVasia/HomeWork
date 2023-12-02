@@ -6,7 +6,7 @@ let input_1 = document.createElement('input');
 let operator = document.createElement('select')
 let operators = ['+', '-', '×', '÷'];
 
-operators.forEach(function(operation) { //Сложно https://qna.habr.com/q/988255
+operators.forEach(function(operation) { //Засовываем опции в селектор https://qna.habr.com/q/988255
     let option = document.createElement('option');
     option.value = operation;
     option.innerText = operation;
@@ -21,6 +21,7 @@ let calculatorButton = document.createElement('button');
 let calculatorButtonText = document.createTextNode('Вычислить');
 calculatorButton.appendChild(calculatorButtonText);
 
+//Засовываем все в контейнер
 container.appendChild(input_1);
 container.appendChild(operator);
 container.appendChild(input_2);
@@ -29,7 +30,7 @@ container.appendChild(result);
 
 document.body.appendChild(container); //Засовывает весь контейнер в тело страницы
 
-calculatorButton.addEventListener('click',
+calculatorButton.addEventListener('click', //Функция калькулятора
 function () {
     let number1 = parseFloat(input_1.value);
     let number2 = parseFloat(input_2.value);
@@ -45,9 +46,7 @@ function () {
         calcResult = number1 * number2;
     }
     if (operation === "÷") {
-        calcResult = number2 !== 0 ? number1 / number2 : "Ошибка: Деление на 0";
+        calcResult = number2 !== 0 ? number1 / number2 : "Ошибка: Деление на 0"; //Проверка "Деление на 0"
     }
     result.value = calcResult;
 });
-
-
